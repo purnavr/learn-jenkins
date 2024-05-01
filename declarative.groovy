@@ -10,10 +10,15 @@ pipeline {
     label 'terraform'
   }
 
+  environment {
+    SAMPLE_URL = 'google.com'
+  }
+
   stages {
     stage("one") {
       steps {
         echo "one"
+        sh environment
       }
     }
 
