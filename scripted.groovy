@@ -2,6 +2,7 @@ node('workstation') {
   try {
     stage("one") {
       echo "one"
+      sh 'exit 1'
     }
 
     stage("two") {
