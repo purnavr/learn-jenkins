@@ -9,7 +9,7 @@ node('workstation') {
       echo "two"
     }
   }
-  catch (e) {
+  catch (v) {
     stage("post-action") {
       echo 'This will run only if failed'
     }
