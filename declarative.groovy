@@ -7,7 +7,9 @@ pipeline {
 //  }
 
   agent {
-    label 'terraform'
+    {
+      label 'terraform'
+    }
   }
 
   stages {
