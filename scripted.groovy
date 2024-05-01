@@ -8,8 +8,9 @@ node('workstation') {
     stage("two") {
       echo "two"
     }
-  } catch (e) {
-    stage("post-action") {
+  }
+  catch (e) {
+    stage("two") {
       echo 'This will run only if failed'
     }
   }
