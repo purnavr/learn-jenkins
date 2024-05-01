@@ -22,7 +22,12 @@ pipeline {
         echo "tw0"
       }
     }
-
   }
+
+  post {
+    always {
+      echo 'I will always say Hello again!'
+    }
+
 }
 
