@@ -1,4 +1,4 @@
-node {
+node('workstation') {
   stage("one") {
     echo "one"
   }
@@ -6,4 +6,5 @@ node {
   stage("two") {
     echo "two"
   }
+
 }
