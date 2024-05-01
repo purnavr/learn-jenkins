@@ -12,7 +12,7 @@ pipeline {
 
   environment {
     SAMPLE_URL = 'google.com'
-    SSH = credential("SSH")
+    SSH = credentialS("SSH")
   }
 
   stages {
