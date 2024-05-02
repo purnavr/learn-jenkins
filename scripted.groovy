@@ -17,6 +17,9 @@ node('workstation') {
     }
     stage("two") {
       userInput = input(message: message, ok: 'Proceed', parameters: [booleanParam(defaultValue: false, description: 'Proceed with deployment')])
+      if (!userInput) {
+        error('Deployment aborted by user')
+      }
       echo "two"
     }
   }
