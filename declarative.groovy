@@ -29,7 +29,7 @@ pipeline {
 
     stage("two") {
       input {
-        message "Should we continue?"
+        message "continue or not?"
         ok "Yes, we should."
       }
       steps {
