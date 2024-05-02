@@ -30,4 +30,4 @@ node('workstation') {
   }
 }
 
-userInput = input(message: message, ok: 'Proceed', parameters: [booleanParam(defaultValue: false, description: 'Proceed with deployment')])
+
