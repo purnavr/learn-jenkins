@@ -16,18 +16,7 @@ node('workstation') {
       }
     }
     stage("two") {
-      script {
-        def userInput = input(
-                id: 'ProceedOrAbort',
-                message: message,
-                parameters: [
-                        choice(choices: ['Proceed', 'Abort'], description: 'Select action to take')
-                ]
-        )
-        if (userInput == 'Abort') {
-          error('Pipeline aborted by user')
-        }
-      }
+      userInput = input(message: message, ok: 'Proceed', parameters: [booleanParam(defaultValue: false, description: 'Proceed with deployment')])
       echo "two"
     }
   }
@@ -37,3 +26,5 @@ node('workstation') {
     }
   }
 }
+
+userInput = input(message: message, ok: 'Proceed', parameters: [booleanParam(defaultValue: false, description: 'Proceed with deployment')])
