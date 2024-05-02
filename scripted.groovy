@@ -16,6 +16,20 @@ node('workstation') {
       }
     }
     stage("two") {
+      def waitForApproval(message) {
+        script {
+          def userInput = input(
+                  id: 'ProceedOrAbort',
+                  message: message,
+                  parameters: [
+                          choice(choices: ['Proceed', 'Abort'], description: 'Select action to take')
+                  ]
+          )
+          if (userInput == 'Abort') {
+            error('Pipeline aborted by user')
+          }
+        }
+      }
       echo "two"
     }
   }
