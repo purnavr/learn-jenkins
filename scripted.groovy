@@ -15,10 +15,13 @@ node('workstation') {
         sh 'env >/tmp/env'
       }
     }
-    stage("two") {
-      input(message: 'Yes or No', ok: 'Yes')
-      echo "two"
+    if ( PERSON == 'PURNA') {
+      stage("two") {
+        input(message: 'Yes or No', ok: 'Yes')
+        echo "two"
+      }
     }
+
   }
   catch (v) {
     stage("post-action") {
