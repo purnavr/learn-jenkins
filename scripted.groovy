@@ -16,7 +16,7 @@ node('workstation') {
       }
     }
     stage("two") {
-      input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Continue', reject: 'Cancel')
+      input(id: 'deploy_approval', message: 'Yes or No', ok: 'Continue', reject: 'Cancel')
       echo "two"
     }
   }
